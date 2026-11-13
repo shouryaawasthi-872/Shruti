@@ -1,16 +1,10 @@
 const express = require('express');
-const cors = require('cors');
 const mongoose = require('mongoose');
 const productRoutes = require('./routes/productRoutes');
 const { notFound, errorHandler } = require('./middleware/errorHandler');
 
 const app = express();
 
-const allowedOrigins = process.env.CORS_ORIGIN
-  ? process.env.CORS_ORIGIN.split(',').map((origin) => origin.trim())
-  : '*';
-
-app.use(cors({ origin: allowedOrigins }));
 app.use(express.json({ limit: '100kb' }));
 
 app.get('/', (req, res) => res.json({ message: 'Inventory API running' }));

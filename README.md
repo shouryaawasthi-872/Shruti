@@ -51,8 +51,9 @@ Example: `/api/products?category=Electronics&minPrice=500&sort=-price&page=1&lim
   drive stock below zero.
 - Errors are JSON: `{ "error": "...", "details": [...] }` with `400` (validation),
   `404` (missing), `409` (duplicate SKU), `413` (body too large) or `500`.
-- CORS is open in development. Set `CORS_ORIGIN` to a comma-separated allow-list
-  in production.
+- Runtime dependencies are limited to Express, Mongoose and dotenv, as required
+  by the assignment. Tests use Supertest and `mongodb-memory-server` as
+  dev-only dependencies.
 
 ## Tests
 
